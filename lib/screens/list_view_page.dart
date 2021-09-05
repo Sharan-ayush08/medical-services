@@ -30,49 +30,48 @@ class ListViewPage extends StatelessWidget {
               itemCount: _itemNames.length,
               itemBuilder: (BuildContext ctx, int index) {
                 return Card(
-                  child: ExpansionTile(
-                    title: Column(
-                      children: <ListTile>[
-                        ListTile(
-                          onTap: () {
-                            print(_isDetail);
-                            if (_isDetail) {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) => ViewDetails(
-                                    title: _itemNames[index],
-                                    details: items![_itemNames[index]],
-                                  ),
-                                ),
-                              );
-                            } else {
-                              Navigator.of(context).push(MaterialPageRoute(
-                                  builder: (context) => ListViewPage(
-                                        title: _itemNames[index],
-                                        items: items![_itemNames[index]],
-                                      )));
-                            }
-                          },
-                          title: Text(
-                            _itemNames[index],
-                            style: TextStyle(fontSize: 20.0),
+                  child:
+                      //  ExpansionTile(
+                      //   //_itemNames[index] //items![_itemNames[index]]
+                      //   title:
+                      ListTile(
+                    onTap: () {
+                      print(_isDetail);
+                      if (_isDetail) {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => ViewDetails(
+                              title: _itemNames[index],
+                              details: items![_itemNames[index]],
+                            ),
                           ),
-                        )
-                      ],
+                        );
+                      } else {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => ListViewPage(
+                                  title: _itemNames[index],
+                                  items: items![_itemNames[index]],
+                                )));
+                      }
+                    },
+                    title: Text(
+                      _itemNames[index],
+                      style: TextStyle(fontSize: 20.0),
                     ),
-                    children: [
-                      Text(
-                        _itemNames[index],
-                        style: TextStyle(fontSize: 20),
-                      ),
-                      Container(
-                        child: ViewDetails(
-                          title: _itemNames[index],
-                          details: _itemNames[index],
-                        ),
-                      )
-                    ],
                   ),
+                  //   children: [
+                  //     Text(
+                  //       _itemNames[index],
+                  //       style: TextStyle(fontSize: 20),
+                  //     ),
+                  //     Container(
+                  //       child: ViewDetails(
+                  //         title: _itemNames[index],
+                  //         details: _itemNames[index],
+                  //       ),
+                  //     )
+                  //   ],
+                  // ),
                 );
               },
             ),

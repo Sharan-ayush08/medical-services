@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class ViewDetails extends StatefulWidget {
+class ViewDetails extends StatelessWidget {
   final title;
   final details;
 
@@ -10,11 +10,11 @@ class ViewDetails extends StatefulWidget {
     this.details,
   }) : super(key: key);
 
-  @override
-  _ViewDetailsState createState() => _ViewDetailsState();
-}
+//   @override
+//   _ViewDetailsState createState() => _ViewDetailsState();
+// }
 
-class _ViewDetailsState extends State<ViewDetails> {
+// class _ViewDetailsState extends State<ViewDetails> {
   // List<ExpansionItem> work = <ExpansionItem>[
   //   ExpansionItem(header: "header", body: "This is the First Header"),
   //   ExpansionItem(header: "header1", body: "This is the Second Header"),
@@ -25,22 +25,29 @@ class _ViewDetailsState extends State<ViewDetails> {
   Widget build(BuildContext context) {
     // final _drugs = Provider.of<Medicines>(context).items;
 
-    final List<String> _points = widget.details.keys.toList();
+    final List<String> _points = details.keys.toList();
+    final List<String> _details = details.values.toList();
     // final List values = widget.items!.keys.toList();
     print(_points);
 
     // print(widget);
     return Scaffold(
+      appBar: AppBar(
+        // backgroundColor: Colors.blue[900],
+        title: Text(title),
+      ),
       body: ListView.builder(
           itemCount: _points.length,
           itemBuilder: (BuildContext context, int index) {
             return ExpansionTile(
-              title: Container(
-                child: ListTile(
-                  leading: Text(_points[index]),
-                  // trailing: Text(values[index]),
-                ),
-              ),
+              title: Text(_points[index]),
+              children: [Text(_details[index])],
+              // Container(
+              //   child: ListTile(
+              //     leading: Text(_points[index]),
+              // trailing: Text(values[index]),
+              // ),
+              // ),
             );
           }),
       // body: ListView(
