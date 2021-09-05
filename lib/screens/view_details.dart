@@ -27,9 +27,8 @@ class _ViewDetailsState extends State<ViewDetails> {
 
     final List<String> _points = widget.details.keys.toList();
     // final List values = widget.items!.keys.toList();
-    // print(values);
-
     print(_points);
+
     // print(widget);
     return Scaffold(
       body: ListView.builder(

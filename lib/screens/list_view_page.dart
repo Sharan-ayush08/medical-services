@@ -9,6 +9,7 @@ class ListViewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final List _itemNames = items!.keys.toList();
+    print(_itemNames);
 
     print(_itemNames);
     var _isDetail = false;
@@ -36,11 +37,14 @@ class ListViewPage extends StatelessWidget {
                           onTap: () {
                             print(_isDetail);
                             if (_isDetail) {
-                              Navigator.of(context).push(MaterialPageRoute(
+                              Navigator.of(context).push(
+                                MaterialPageRoute(
                                   builder: (context) => ViewDetails(
-                                        title: _itemNames[index],
-                                        details: items![_itemNames[index]],
-                                      )));
+                                    title: _itemNames[index],
+                                    details: items![_itemNames[index]],
+                                  ),
+                                ),
+                              );
                             } else {
                               Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) => ListViewPage(
@@ -56,20 +60,22 @@ class ListViewPage extends StatelessWidget {
                         )
                       ],
                     ),
-                    children: [Text(_itemNames.toString())],
+                    children: [
+                      Text(
+                        _itemNames[index],
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      Container(
+                        child: ViewDetails(
+                          title: _itemNames[index],
+                          details: _itemNames[index],
+                        ),
+                      )
+                    ],
                   ),
                 );
               },
             ),
     );
   }
-}
-
-class ExpansionItem {
-  bool isExpanded;
-  final String header;
-  final String body;
-
-  ExpansionItem(
-      {required this.header, required this.body, this.isExpanded: false});
 }
