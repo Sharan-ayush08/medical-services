@@ -36,8 +36,6 @@ class ServicesPage extends StatelessWidget {
     // DrugDetails(),
   ];
 
-  // var _actionButtonColor = Colors.amber[50];
-
   final _iconColor = Colors.green[400];
 
   @override
@@ -67,7 +65,7 @@ class ServicesPage extends StatelessWidget {
                       color: Colors.grey,
                     ),
                     hintStyle: TextStyle(color: Colors.grey, fontSize: 15),
-                    hintText: "Search for medicines and Health care"),
+                    hintText: "Search for Medicines and Health care"),
               ),
             ),
           ),
