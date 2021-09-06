@@ -4,7 +4,7 @@ class Drugs with ChangeNotifier {
   Map<String, Map<String, String>> _items = {
     'abatacept': {
       'Dosage & Indication': 'Injection,Iyophilized powder for reconsitution',
-      'Interaction': 'Cntradicated...',
+      'Interaction': 'Contradicated...',
       'Adverse Effects': "Headacge(18%),Nasopharyngits(12%)",
       'Warning': 'None Listed by the manfucaturer',
       'Pregnancy':
@@ -22,7 +22,7 @@ class Drugs with ChangeNotifier {
       'Adverse Effects': 'Nausea,Heache',
       'Warning': 'Hyoersentivity reactions',
       'Pregnancy':
-          'Healthcare professional are encouraged to register patients and pregant women.',
+          'Healthcare professional are encouraged to register patients and pregnant women.',
       'Pharmacology':
           'Gaunsoine analog that inhibits HIV-1 reverse transcriptes by completing with dGTP.',
       'Adminstration':

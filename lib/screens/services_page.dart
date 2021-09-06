@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:medical_services/providers/services/health_products.dart';
+import 'package:medical_services/providers/services/calculator.dart';
+import 'package:medical_services/providers/services/injection.dart';
+import 'package:medical_services/providers/services/pill_identifierr.dart';
 import '../providers/services/conditions.dart';
 import '../providers/services/drugs.dart';
 import '../providers/services/procedures.dart';
@@ -22,7 +26,7 @@ class ServicesPage extends StatelessWidget {
     "Conditions",
     "Calculators",
     "Injection",
-    "Health",
+    "Health Products",
     "Pill Indentifier",
     "More",
   ];
@@ -31,9 +35,10 @@ class ServicesPage extends StatelessWidget {
     ListViewPage(title: 'Drugs', items: Drugs().items),
     ListViewPage(title: 'Procedures', items: Procedures().items),
     ListViewPage(title: 'Conditions', items: Conditions().items),
-    // ViewCalculators(),
-    // ViewTools(),
-    // DrugDetails(),
+    ListViewPage(title: 'Calculators', items: Calculators().items),
+    ListViewPage(title: 'Injections', items: Injections().items),
+    ListViewPage(title: 'Health Products', items: HealthProducts().items),
+    ListViewPage(title: 'Select Shape', items: PillIndentifier().items)
   ];
 
   final _iconColor = Colors.green[400];
