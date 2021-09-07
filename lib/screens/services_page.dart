@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:medical_services/providers/services/health_products.dart';
 import 'package:medical_services/providers/services/calculator.dart';
 import 'package:medical_services/providers/services/injection.dart';
+import 'package:medical_services/providers/services/more.dart';
 import 'package:medical_services/providers/services/pill_identifierr.dart';
 import '../providers/services/conditions.dart';
 import '../providers/services/drugs.dart';
@@ -38,7 +39,8 @@ class ServicesPage extends StatelessWidget {
     ListViewPage(title: 'Calculators', items: Calculators().items),
     ListViewPage(title: 'Injections', items: Injections().items),
     ListViewPage(title: 'Health Products', items: HealthProducts().items),
-    ListViewPage(title: 'Select Shape', items: PillIndentifier().items)
+    ListViewPage(title: 'Select Shape', items: PillIndentifier().items),
+    ListViewPage(title: 'Tools', items: More().items)
   ];
 
   final _iconColor = Colors.green[400];
